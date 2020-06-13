@@ -7,14 +7,20 @@ using System.Web.Mvc;
 
 namespace ElevenNoteV2.WebMVC.Controllers
 {
+    [Authorize]
     public class NoteController : Controller
     {
-        [Authorize]
         // GET: Note
         public ActionResult Index()
         {
             var model = new NoteListItem[0];
             return View(model);
+        }
+
+        // GET
+        public ActionResult Create()
+        {
+            return View();
         }
     }
 }
