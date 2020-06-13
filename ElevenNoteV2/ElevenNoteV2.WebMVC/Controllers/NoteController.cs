@@ -55,6 +55,15 @@ namespace ElevenNoteV2.WebMVC.Controllers
             var service = new NoteService(userId);
             return service;
         }
-    }
+
+        // GET: Note/Detail
+        public ActionResult Details(int id)
+        {
+            var service = CreateNoteService();
+            var model = service.GetNoteById(id);
+
+            return View(model);
+        }
+
     }
 }
