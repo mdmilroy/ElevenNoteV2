@@ -48,7 +48,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsStarred)
+                @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.NoteId })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedUtc)
@@ -78,14 +78,14 @@
                         url: "/api/note/" + noteId + "/star",
                         data: null
                     })
-                    .done(function (r) {
-                        target.removeClass();
-                        target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon=star"));
-                    })
-                    .fail(function (r) {
-                        ("Failed to change star status")
-                    });
+                        .done(function (r) {
+                            target.removeClass();
+                            target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                        })
+                        .fail(function (r) {
+                            alert("Failed to change star status");
+                        });
                 });
         });
     </script>
-    }
+}
