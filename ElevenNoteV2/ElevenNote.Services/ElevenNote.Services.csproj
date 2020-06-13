@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NoteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +65,10 @@
     <ProjectReference Include="..\ElevenNote.Data\ElevenNote.Data.csproj">
       <Project>{af4fab58-8903-4cdf-a02e-d20f64d5ee6e}</Project>
       <Name>ElevenNote.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElevenNote.Models\ElevenNote.Models.csproj">
+      <Project>{35D313A0-E50E-458E-BD80-287D30FE0F00}</Project>
+      <Name>ElevenNote.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
